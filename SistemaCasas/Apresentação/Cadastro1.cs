@@ -14,8 +14,7 @@ namespace SistemaCasas.Apresentação
 {
     public partial class Cadastro1 : Form
     {
-        PessoaCPF pessoacpf = new PessoaCPF();
-        PessoaCNPJ pessoacnpj = new PessoaCNPJ();
+        Pessoa pessoa = new Pessoa();
         Endereco endereco = new Endereco();
 
         public Cadastro1()
@@ -23,33 +22,27 @@ namespace SistemaCasas.Apresentação
             InitializeComponent();
         }
 
-        public void ReceberCadastroCPF(PessoaCPF pessoa)
+        public void ReceberPessoa(Pessoa pessoa)
         {
-            pessoacpf = pessoa;
+            this.pessoa = pessoa;
 
-            comboBox1.SelectedIndex = 0;
+            if (pessoa.isCNPJ == false)
+            {
+                comboBox1.SelectedIndex = 0;
+                txtCPF.Text = pessoa.cpf;
+            }
+            else
+            {
+                comboBox1.SelectedIndex = 1;
+                txtCNPJ.Text = pessoa.cnpj;
+            }
 
-            txtCPF.Text = pessoacpf.cpf;
-
-            txtNome.Text = pessoacpf.nome;
-            txtEmail.Text = pessoacpf.email;
-            txtFiliacao.Text = pessoacpf.filiacao;
-            dataPessoa.Value = pessoacpf.data;
+            txtNome.Text = pessoa.nome;
+            txtEmail.Text = pessoa.email;
+            txtFiliacao.Text = pessoa.filiacao;
+            dataPessoa.Value = pessoa.data;
         }
 
-        public void ReceberCadastroCNPJ(PessoaCNPJ pessoa)
-        {
-            pessoacnpj = pessoa;
-
-            comboBox1.SelectedIndex = 1;
-
-            txtCNPJ.Text = pessoacnpj.cnpj;
-
-            txtNome.Text = pessoacnpj.nome;
-            txtEmail.Text = pessoacnpj.email;
-            txtFiliacao.Text = pessoacnpj.filiacao;
-            dataPessoa.Value = pessoacnpj.data;
-        }
         public void ReceberEndereco(Endereco endereco) => this.endereco = endereco;
 
         private void Logo_Click(object sender, EventArgs e)
@@ -58,28 +51,23 @@ namespace SistemaCasas.Apresentação
 
             ini.ReceberEndereco(endereco);
 
+            pessoa.nome = txtNome.Text;
+            pessoa.email = txtEmail.Text;
+            pessoa.filiacao = txtFiliacao.Text;
+            pessoa.data = dataPessoa.Value;
+
             if (comboBox1.Text == "CPF")
             {
-                pessoacpf.nome = txtNome.Text;
-                pessoacpf.email = txtEmail.Text;
-                pessoacpf.filiacao = txtFiliacao.Text;
-                pessoacpf.data = dataPessoa.Value;
-
-                pessoacpf.cpf = txtCPF.Text;
-
-                ini.ReceberCadastroCPF(pessoacpf);
+                pessoa.cpf = txtCPF.Text;
+                pessoa.isCNPJ = false;
             }
             else if (comboBox1.Text == "CNPJ")
             {
-                pessoacnpj.nome = txtNome.Text;
-                pessoacnpj.email = txtEmail.Text;
-                pessoacnpj.filiacao = txtFiliacao.Text;
-                pessoacnpj.data = dataPessoa.Value;
-
-                pessoacnpj.cnpj = txtCNPJ.Text;
-
-                ini.ReceberCadastroCNPJ(pessoacnpj);
+                pessoa.cnpj = txtCNPJ.Text;
+                pessoa.isCNPJ = true;
             }
+
+            ini.ReceberPessoa(pessoa);
 
             ini.Show();
             this.Close();
@@ -122,28 +110,23 @@ namespace SistemaCasas.Apresentação
 
             cad2.ReceberEndereco(endereco);
 
+            pessoa.nome = txtNome.Text;
+            pessoa.email = txtEmail.Text;
+            pessoa.filiacao = txtFiliacao.Text;
+            pessoa.data = dataPessoa.Value;
+
             if (comboBox1.Text == "CPF")
             {
-                pessoacpf.nome = txtNome.Text;
-                pessoacpf.email = txtEmail.Text;
-                pessoacpf.filiacao = txtFiliacao.Text;
-                pessoacpf.data = dataPessoa.Value;
-
-                pessoacpf.cpf = txtCPF.Text;
-
-                cad2.ReceberCadastroCPF(pessoacpf);
+                pessoa.cpf = txtCPF.Text;
+                pessoa.isCNPJ = false;
             }
             else if (comboBox1.Text == "CNPJ")
             {
-                pessoacnpj.nome = txtNome.Text;
-                pessoacnpj.email = txtEmail.Text;
-                pessoacnpj.filiacao = txtFiliacao.Text;
-                pessoacnpj.data = dataPessoa.Value;
-
-                pessoacnpj.cnpj = txtCNPJ.Text;
-
-                cad2.ReceberCadastroCNPJ(pessoacnpj);
+                pessoa.cnpj = txtCNPJ.Text;
+                pessoa.isCNPJ = true;
             }
+
+            cad2.ReceberPessoa(pessoa);
 
             cad2.Show();
             this.Close();

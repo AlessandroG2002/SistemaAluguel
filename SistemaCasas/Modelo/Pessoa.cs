@@ -11,7 +11,11 @@ namespace SistemaCasas.Modelo
         public string nome;
         public string email;
         public string filiacao;
-        public DateTime data;
+        public DateTime data = DateTime.Now;
         public bool isAdmin;
+        public bool isCNPJ;
+
+        public string cpf;
+        public string cnpj;
     }
 }

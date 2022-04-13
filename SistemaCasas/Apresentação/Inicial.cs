@@ -14,8 +14,7 @@ namespace SistemaCasas
 {
     public partial class Form1 : Form
     {
-        PessoaCPF pessoacpf = new PessoaCPF();
-        PessoaCNPJ pessoacnpj = new PessoaCNPJ();
+        Pessoa pessoa = new Pessoa();
         Endereco endereco = new Endereco();
 
         public Form1()
@@ -23,9 +22,7 @@ namespace SistemaCasas
             InitializeComponent();
         }
 
-        public void ReceberCadastroCPF(PessoaCPF pessoa) => this.pessoacpf = pessoa;
-
-        public void ReceberCadastroCNPJ(PessoaCNPJ pessoa) => this.pessoacnpj = pessoa;
+        public void ReceberPessoa(Pessoa pessoa) => this.pessoa = pessoa;
 
         public void ReceberEndereco(Endereco endereco) => this.endereco = endereco;
 
@@ -40,14 +37,7 @@ namespace SistemaCasas
 
             cad.ReceberEndereco(endereco);
 
-            if (pessoacpf.cpf != null)
-            {
-                cad.ReceberCadastroCPF(pessoacpf);
-            }
-            else if (pessoacnpj.cnpj != null)
-            {
-                cad.ReceberCadastroCNPJ(pessoacnpj);
-            }
+            cad.ReceberPessoa(pessoa);
 
             cad.Show();
             this.Hide();

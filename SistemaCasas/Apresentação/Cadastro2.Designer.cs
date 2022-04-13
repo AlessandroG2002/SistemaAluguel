@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelSair = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
@@ -48,6 +46,8 @@
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtUF = new System.Windows.Forms.ComboBox();
+            this.labelSair = new System.Windows.Forms.Label();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -64,22 +64,6 @@
             this.panel1.Size = new System.Drawing.Size(157, 450);
             this.panel1.TabIndex = 1;
             // 
-            // labelSair
-            // 
-            this.labelSair.BackColor = System.Drawing.Color.Transparent;
-            this.labelSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSair.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelSair.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSair.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelSair.Image = global::SistemaCasas.Properties.Resources.exit_32_white;
-            this.labelSair.Location = new System.Drawing.Point(0, 399);
-            this.labelSair.Name = "labelSair";
-            this.labelSair.Size = new System.Drawing.Size(157, 51);
-            this.labelSair.TabIndex = 5;
-            this.labelSair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelSair.Click += new System.EventHandler(this.labelSair_Click);
-            // 
             // label2
             // 
             this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -92,19 +76,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Rent la Vida";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Logo
-            // 
-            this.Logo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Logo.Image = global::SistemaCasas.Properties.Resources.logo_white;
-            this.Logo.Location = new System.Drawing.Point(0, 0);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(157, 91);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logo.TabIndex = 3;
-            this.Logo.TabStop = false;
-            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // label1
             // 
@@ -191,6 +162,7 @@
             this.btnProximo.TabIndex = 19;
             this.btnProximo.Text = "Próximo";
             this.btnProximo.UseVisualStyleBackColor = false;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // label5
             // 
@@ -367,6 +339,35 @@
             this.txtUF.Size = new System.Drawing.Size(91, 29);
             this.txtUF.TabIndex = 33;
             this.txtUF.Text = "AC";
+            // 
+            // labelSair
+            // 
+            this.labelSair.BackColor = System.Drawing.Color.Transparent;
+            this.labelSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelSair.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelSair.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSair.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelSair.Image = global::SistemaCasas.Properties.Resources.exit_32_white;
+            this.labelSair.Location = new System.Drawing.Point(0, 399);
+            this.labelSair.Name = "labelSair";
+            this.labelSair.Size = new System.Drawing.Size(157, 51);
+            this.labelSair.TabIndex = 5;
+            this.labelSair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSair.Click += new System.EventHandler(this.labelSair_Click);
+            // 
+            // Logo
+            // 
+            this.Logo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Logo.Image = global::SistemaCasas.Properties.Resources.logo_white;
+            this.Logo.Location = new System.Drawing.Point(0, 0);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(157, 91);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.TabIndex = 3;
+            this.Logo.TabStop = false;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // Cadastro2
             // 

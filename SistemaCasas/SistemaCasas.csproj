@@ -60,6 +60,12 @@
     <Compile Include="Apresentação\Cadastro2.Designer.cs">
       <DependentUpon>Cadastro2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentação\Cadastro3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentação\Cadastro3.Designer.cs">
+      <DependentUpon>Cadastro3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentação\Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,10 +79,10 @@
     </Compile>
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\LoginDao.cs" />
+    <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Modelo\Endereco.cs" />
+    <Compile Include="Modelo\Login.cs" />
     <Compile Include="Modelo\Pessoa.cs" />
-    <Compile Include="Modelo\PessoaCNPJ.cs" />
-    <Compile Include="Modelo\PessoaCPF.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Apresentação\Cadastro1.resx">
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentação\Cadastro2.resx">
       <DependentUpon>Cadastro2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentação\Cadastro3.resx">
+      <DependentUpon>Cadastro3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentação\Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>

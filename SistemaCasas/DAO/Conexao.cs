@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Atividade5.DAO
+namespace SistemaCasas.DAO
 {
     public class Conexao
     {

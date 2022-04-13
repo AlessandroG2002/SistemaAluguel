@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace SistemaCasas.Modelo
 {
-    public class PessoaCNPJ : Pessoa
+    public class Login
     {
-        public string cnpj;
+        public string login;
+        public string senha;
+        public string confSenha;
     }
 }

@@ -13,18 +13,14 @@ namespace SistemaCasas.Apresentação
 {
     public partial class Cadastro2 : Form
     {
-        PessoaCPF pessoacpf = new PessoaCPF();
-        PessoaCNPJ pessoacnpj = new PessoaCNPJ();
+        Pessoa pessoa = new Pessoa();
         Endereco endereco = new Endereco();
 
         public Cadastro2()
         {
             InitializeComponent();
         }
-
-        public void ReceberCadastroCPF(PessoaCPF pessoa) => this.pessoacpf = pessoa;
-
-        public void ReceberCadastroCNPJ(PessoaCNPJ pessoa) => this.pessoacnpj = pessoa;
+        public void ReceberPessoa(Pessoa pessoa) => this.pessoa = pessoa;
 
         public void ReceberEndereco(Endereco endereco)
         {
@@ -50,15 +46,7 @@ namespace SistemaCasas.Apresentação
             endereco.cidade = txtCidade.Text;
 
             ini.ReceberEndereco(endereco);
-
-            if (pessoacpf.cpf != null)
-            {
-                ini.ReceberCadastroCPF(pessoacpf);
-            }
-            else if (pessoacnpj.cnpj != null)
-            {
-                ini.ReceberCadastroCNPJ(pessoacnpj);
-            }
+            ini.ReceberPessoa(pessoa);
 
             ini.Show();
             this.Close();
@@ -81,15 +69,25 @@ namespace SistemaCasas.Apresentação
             endereco.cidade = txtCidade.Text;
 
             cad.ReceberEndereco(endereco);
+            cad.ReceberPessoa(pessoa);
 
-            if (pessoacpf.cpf != null)
-            {
-                cad.ReceberCadastroCPF(pessoacpf);
-            }
-            else if (pessoacnpj.cnpj != null)
-            {
-                cad.ReceberCadastroCNPJ(pessoacnpj);
-            }
+            cad.Show();
+            this.Hide();
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            Cadastro3 cad = new Cadastro3();
+
+            endereco.numero = txtNumero.Text;
+            endereco.bairro = txtBairro.Text;
+            endereco.cep = txtCEP.Text;
+            endereco.endereco = txtEndereco.Text;
+            endereco.estado = txtUF.Text;
+            endereco.cidade = txtCidade.Text;
+
+            cad.ReceberEndereco(endereco);
+            cad.ReceberPessoa(pessoa);
 
             cad.Show();
             this.Hide();
@@ -106,5 +104,7 @@ namespace SistemaCasas.Apresentação
                 txtUF.Text = resultado.uf;
             }
         }
+
+
     }
 }
