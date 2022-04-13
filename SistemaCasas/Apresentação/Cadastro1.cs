@@ -16,6 +16,7 @@ namespace SistemaCasas.Apresentação
     {
         PessoaCPF pessoacpf = new PessoaCPF();
         PessoaCNPJ pessoacnpj = new PessoaCNPJ();
+        Endereco endereco = new Endereco();
 
         public Cadastro1()
         {
@@ -49,15 +50,13 @@ namespace SistemaCasas.Apresentação
             txtFiliacao.Text = pessoacnpj.filiacao;
             dataPessoa.Value = pessoacnpj.data;
         }
-
-        private void txtCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
+        public void ReceberEndereco(Endereco endereco) => this.endereco = endereco;
 
         private void Logo_Click(object sender, EventArgs e)
         {
             Form1 ini = new Form1();
+
+            ini.ReceberEndereco(endereco);
 
             if (comboBox1.Text == "CPF")
             {
@@ -115,6 +114,39 @@ namespace SistemaCasas.Apresentação
                 labelCNPJ.Show();
                 txtCNPJ.Show();
             }
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            Cadastro2 cad2 = new Cadastro2();
+
+            cad2.ReceberEndereco(endereco);
+
+            if (comboBox1.Text == "CPF")
+            {
+                pessoacpf.nome = txtNome.Text;
+                pessoacpf.email = txtEmail.Text;
+                pessoacpf.filiacao = txtFiliacao.Text;
+                pessoacpf.data = dataPessoa.Value;
+
+                pessoacpf.cpf = txtCPF.Text;
+
+                cad2.ReceberCadastroCPF(pessoacpf);
+            }
+            else if (comboBox1.Text == "CNPJ")
+            {
+                pessoacnpj.nome = txtNome.Text;
+                pessoacnpj.email = txtEmail.Text;
+                pessoacnpj.filiacao = txtFiliacao.Text;
+                pessoacnpj.data = dataPessoa.Value;
+
+                pessoacnpj.cnpj = txtCNPJ.Text;
+
+                cad2.ReceberCadastroCNPJ(pessoacnpj);
+            }
+
+            cad2.Show();
+            this.Close();
         }
     }
 }

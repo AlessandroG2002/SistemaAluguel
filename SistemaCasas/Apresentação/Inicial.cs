@@ -16,6 +16,7 @@ namespace SistemaCasas
     {
         PessoaCPF pessoacpf = new PessoaCPF();
         PessoaCNPJ pessoacnpj = new PessoaCNPJ();
+        Endereco endereco = new Endereco();
 
         public Form1()
         {
@@ -26,6 +27,8 @@ namespace SistemaCasas
 
         public void ReceberCadastroCNPJ(PessoaCNPJ pessoa) => this.pessoacnpj = pessoa;
 
+        public void ReceberEndereco(Endereco endereco) => this.endereco = endereco;
+
         private void labelSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -34,6 +37,8 @@ namespace SistemaCasas
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Cadastro1 cad = new Cadastro1();
+
+            cad.ReceberEndereco(endereco);
 
             if (pessoacpf.cpf != null)
             {
